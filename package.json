@@ -1,0 +1,10 @@
+{
+  "name": "macos-prompt-rewriter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "System-wide prompt rewriter MVP for macOS using a local OpenAI-backed server.",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js"
+  }
+}
