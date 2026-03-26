@@ -3,16 +3,16 @@
 ## Project Summary
 - `prompt_type` is a small Node-based local rewrite service for prompt cleanup, with a macOS Hammerspoon client and `launchd` background service.
 - The main product path is macOS-first: Hammerspoon captures text, calls `POST /v1/rewrite`, and pastes the rewritten result back into the active app.
-- There are no npm dependencies. The main runtime is [`server.js`](/Users/reece/Desktop/prompt_type/server.js) plus shell scripts under [`scripts/`](/Users/reece/Desktop/prompt_type/scripts).
+- There are no npm dependencies. The main runtime is `server.js` plus shell scripts under [`scripts/`](/Users/reece/Desktop/prompt_type/scripts).
 
 ## Important Files / Areas
-- [`server.js`](/Users/reece/Desktop/prompt_type/server.js): entire HTTP API, prompt transformation rules, protected-span handling, marked-segment edit mode, health route.
-- [`clients/macos/init.lua`](/Users/reece/Desktop/prompt_type/clients/macos/init.lua): hotkeys, clipboard preservation, selection fallback, request/timeout UX.
-- [`scripts/install-launch-agent.sh`](/Users/reece/Desktop/prompt_type/scripts/install-launch-agent.sh): installs runtime files into `~/Library/Application Support/PromptRewriter` and registers `com.promptrewriter.server`.
-- [`scripts/start-server.sh`](/Users/reece/Desktop/prompt_type/scripts/start-server.sh): launchd entrypoint; resolves `node`, loads `.env`, starts the server.
-- [`launchd/com.promptrewriter.server.plist`](/Users/reece/Desktop/prompt_type/launchd/com.promptrewriter.server.plist): launch agent template.
-- [`AI_SETUP.md`](/Users/reece/Desktop/prompt_type/AI_SETUP.md): the intended automated setup contract for agents.
-- [`.env.example`](/Users/reece/Desktop/prompt_type/.env.example): authoritative env surface.
+- `server.js`: entire HTTP API, prompt transformation rules, protected-span handling, marked-segment edit mode, health route.
+- `clients/macos/init.lua`: hotkeys, clipboard preservation, selection fallback, request/timeout UX.
+- `scripts/install-launch-agent.sh`: installs runtime files into `~/Library/Application Support/PromptRewriter` and registers `com.promptrewriter.server`.
+- `scripts/start-server.sh`: launchd entrypoint; resolves `node`, loads `.env`, starts the server.
+- `launchd/com.promptrewriter.server.plist`: launch agent template.
+- `AI_SETUP.md`: the intended automated setup contract for agents.
+- `.env.example`: authoritative env surface.
 
 ## Verification Commands
 - `npm run check`
